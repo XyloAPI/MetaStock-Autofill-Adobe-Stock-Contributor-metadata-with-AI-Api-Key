@@ -1,0 +1,63 @@
+{
+  "manifest_version": 3,
+  "name": "MetaStock AI Autofill",
+  "version": "0.1.0",
+  "description": "Autofill Adobe Stock Contributor metadata with AI.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://contributor.stock.adobe.com/*",
+    "https://stock.adobe.com/*",
+    "https://generativelanguage.googleapis.com/*",
+    "https://api.groq.com/*"
+  ],
+  "background": {
+    "service_worker": "src/background.js",
+    "type": "module"
+  },
+  "icons": {
+    "16": "src/assets/icon16.png",
+    "32": "src/assets/icon32.png",
+    "48": "src/assets/icon48.png",
+    "128": "src/assets/icon128.png"
+  },
+  "action": {
+    "default_title": "MetaStock AI",
+    "default_popup": "src/popup/popup.html",
+    "default_icon": {
+      "16": "src/assets/icon16.png",
+      "32": "src/assets/icon32.png",
+      "48": "src/assets/icon48.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://contributor.stock.adobe.com/*",
+        "https://stock.adobe.com/*"
+      ],
+      "js": [
+        "src/content.js"
+      ],
+      "css": [
+        "src/content.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "src/assets/logo.png"
+      ],
+      "matches": [
+        "https://contributor.stock.adobe.com/*",
+        "https://stock.adobe.com/*"
+      ]
+    }
+  ]
+}

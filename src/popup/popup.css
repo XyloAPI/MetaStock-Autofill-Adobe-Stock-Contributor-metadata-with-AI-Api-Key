@@ -1,0 +1,217 @@
+:root {
+  color-scheme: light;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(45, 212, 191, 0.28), transparent 40%),
+    linear-gradient(180deg, #f8fafc, #edf2f7);
+  color: #0f172a;
+}
+
+body {
+  margin: 0;
+}
+
+.popup {
+  width: 340px;
+  padding: 18px;
+}
+
+.hero {
+  margin-bottom: 16px;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #0f766e;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.1;
+}
+
+.copy {
+  margin: 8px 0 0;
+  color: #475467;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.automation-card {
+  margin-bottom: 16px;
+  padding: 14px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.automation-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.automation-eyebrow {
+  margin: 0 0 4px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #0f766e;
+}
+
+.automation-head h2 {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.1;
+}
+
+.automation-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 56px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #e2e8f0;
+  color: #0f172a;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.automation-badge.running {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.automation-badge.stopped {
+  background: #ffedd5;
+  color: #b45309;
+}
+
+.automation-badge.done {
+  background: #ccfbf1;
+  color: #0f766e;
+}
+
+.automation-badge.error {
+  background: #fee2e2;
+  color: #b42318;
+}
+
+.automation-status {
+  margin: 12px 0 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #475467;
+}
+
+.automation-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.automation-actions-secondary {
+  grid-template-columns: 1fr;
+  margin-top: 8px;
+}
+
+.settings {
+  display: grid;
+  gap: 12px;
+}
+
+.settings label {
+  display: grid;
+  gap: 6px;
+}
+
+.settings span {
+  font-size: 12px;
+  font-weight: 700;
+  color: #344054;
+}
+
+.settings input {
+  border: 1px solid #d0d5dd;
+  border-radius: 12px;
+  padding: 10px 12px;
+  font: inherit;
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.settings input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border-radius: 6px;
+  justify-self: start;
+}
+
+.settings select,
+.settings textarea,
+.settings small {
+  font: inherit;
+}
+
+.settings select,
+.settings textarea {
+  border: 1px solid #d0d5dd;
+  border-radius: 12px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.82);
+  color: #0f172a;
+}
+
+.settings textarea {
+  resize: vertical;
+}
+
+.settings small {
+  font-size: 11px;
+  line-height: 1.4;
+  color: #475467;
+}
+
+.inline-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+}
+
+.settings button {
+  border: 0;
+  border-radius: 14px;
+  padding: 12px 14px;
+  font: inherit;
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(135deg, #0f766e, #1d4ed8);
+  cursor: pointer;
+}
+
+.settings button.secondary {
+  background: #e2e8f0;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.automation-actions button.secondary {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.status {
+  margin: 0;
+  font-size: 12px;
+  color: #475467;
+}

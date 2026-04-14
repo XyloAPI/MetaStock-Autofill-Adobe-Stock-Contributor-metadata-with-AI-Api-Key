@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MetaStock AI</title>
+    <link rel="stylesheet" href="./popup.css" />
+  </head>
+  <body>
+    <main class="popup">
+      <header class="hero">
+        <p class="eyebrow">MetaStock AI</p>
+        <h1>AI for Adobe Stock</h1>
+        <p class="copy">Pick a provider, save your API key, then run automation from this popup.</p>
+      </header>
+
+      <section class="automation-card">
+        <div class="automation-head">
+          <div>
+            <p class="automation-eyebrow">Automation</p>
+            <h2>Start and wait</h2>
+          </div>
+          <span id="automation-badge" class="automation-badge">Idle</span>
+        </div>
+        <p id="automation-status" class="automation-status">
+          Open Adobe Stock upload page, then pick Generate Current or Start Queue.
+        </p>
+        <div class="automation-actions">
+          <button id="generate-current" type="button">Generate Current</button>
+          <button id="start-automation" type="button">Start Queue</button>
+        </div>
+        <div class="automation-actions automation-actions-secondary">
+          <button id="stop-automation" type="button" class="secondary">Stop</button>
+        </div>
+      </section>
+
+      <form id="settings-form" class="settings">
+        <label>
+          <span>Provider</span>
+          <select id="provider" name="provider">
+            <option value="gemini">Gemini</option>
+            <option value="groq">Groq</option>
+          </select>
+        </label>
+
+        <label>
+          <span>Gemini API keys</span>
+          <textarea
+            id="apiKeysText"
+            name="apiKeysText"
+            rows="5"
+            placeholder="One key per line, or separate by comma"
+            autocomplete="off"
+          ></textarea>
+          <small>Used for automatic fallback when key is limited, invalid, or quota is exhausted.</small>
+        </label>
+
+        <label class="file-import">
+          <span>Import .txt file</span>
+          <input id="apiKeysFile" name="apiKeysFile" type="file" accept=".txt,text/plain" />
+        </label>
+
+        <label>
+          <span>Groq API keys</span>
+          <textarea
+            id="groqApiKeysText"
+            name="groqApiKeysText"
+            rows="5"
+            placeholder="One key per line, or separate by comma"
+            autocomplete="off"
+          ></textarea>
+          <small>Used when provider is set to Groq.</small>
+        </label>
+
+        <label>
+          <span>Model</span>
+          <div class="inline-row">
+            <select id="model" name="model"></select>
+            <button id="refresh-models" type="button" class="secondary">Refresh</button>
+          </div>
+          <small id="models-status">Using cached model list.</small>
+        </label>
+
+        <label>
+          <span>Output language</span>
+          <select id="language" name="language">
+            <option value="id">Indonesian</option>
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+            <option value="pt">Português</option>
+            <option value="it">Italiano</option>
+            <option value="nl">Nederlands</option>
+            <option value="ja">日本語</option>
+            <option value="ko">한국어</option>
+            <option value="zh">中文</option>
+          </select>
+        </label>
+
+        <label>
+          <span>Limit keywords</span>
+          <input id="keywordLimitEnabled" name="keywordLimitEnabled" type="checkbox" checked />
+        </label>
+
+        <label>
+          <span>Keyword count</span>
+          <input id="keywordCount" name="keywordCount" type="number" min="1" max="49" value="49" />
+        </label>
+
+        <label>
+          <span>Limit title</span>
+          <input id="titleLimitEnabled" name="titleLimitEnabled" type="checkbox" checked />
+        </label>
+
+        <label>
+          <span>Title max length</span>
+          <input id="titleMaxLength" name="titleMaxLength" type="number" min="20" max="200" value="70" />
+        </label>
+
+        <label>
+          <span>Generate by AI</span>
+          <input id="enableGenerativeAi" name="enableGenerativeAi" type="checkbox" checked />
+        </label>
+
+        <button type="submit">Save</button>
+        <p id="status" class="status">No changes yet.</p>
+      </form>
+    </main>
+
+    <script type="module" src="./popup.js"></script>
+  </body>
+</html>
